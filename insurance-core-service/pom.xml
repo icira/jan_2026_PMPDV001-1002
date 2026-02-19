@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.policymanagementplatform</groupId>
     <artifactId>insurance-core-service</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.5</version>
     <name>insurance-core-service</name>
     <description>insurance-core-service</description>
     <url/>

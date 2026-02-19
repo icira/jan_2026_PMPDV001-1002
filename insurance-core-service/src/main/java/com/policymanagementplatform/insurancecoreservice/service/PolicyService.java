@@ -151,7 +151,7 @@ public class PolicyService {
         Specification<Policy> spec = Specification.where(PolicySpecifications.hasClientId(clientId))
                 .and(PolicySpecifications.hasBrokerId(brokerId))
                 .and(PolicySpecifications.hasStatus(status))
-                .and(PolicySpecifications.periodWithin(startDateFrom, startDateTo));
+                .and(PolicySpecifications.hasPeriodWithin(startDateFrom, startDateTo));
 
         return policyRepository.findAll(spec, pageable);
     }

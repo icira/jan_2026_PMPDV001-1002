@@ -115,8 +115,8 @@ class PolicySpecificationsTest {
     }
 
     @Test
-    void periodWithinShouldReturnConjunctionWhenBothBoundsNull() {
-        var spec = PolicySpecifications.periodWithin(null, null);
+    void hasPeriodWithinShouldReturnConjunctionWhenBothBoundsNull() {
+        var spec = PolicySpecifications.hasPeriodWithin(null, null);
 
         Root<Policy> root = mock(Root.class);
         CriteriaQuery<?> query = mock(CriteriaQuery.class);
@@ -133,10 +133,10 @@ class PolicySpecificationsTest {
     }
 
     @Test
-    void periodWithinShouldApplyOnlyStartBoundWhenOnlyStartProvided() {
+    void hasPeriodWithinShouldApplyOnlyStartBoundWhenOnlyStartProvided() {
         LocalDate from = LocalDate.of(2026, 1, 1);
 
-        var spec = PolicySpecifications.periodWithin(from, null);
+        var spec = PolicySpecifications.hasPeriodWithin(from, null);
 
         Root<Policy> root = mock(Root.class);
         CriteriaQuery<?> query = mock(CriteriaQuery.class);
@@ -162,10 +162,10 @@ class PolicySpecificationsTest {
     }
 
     @Test
-    void periodWithinShouldApplyOnlyEndBoundWhenOnlyEndProvided() {
+    void hasPeriodWithinShouldApplyOnlyEndBoundWhenOnlyEndProvided() {
         LocalDate to = LocalDate.of(2026, 12, 31);
 
-        var spec = PolicySpecifications.periodWithin(null, to);
+        var spec = PolicySpecifications.hasPeriodWithin(null, to);
 
         Root<Policy> root = mock(Root.class);
         CriteriaQuery<?> query = mock(CriteriaQuery.class);
@@ -191,11 +191,11 @@ class PolicySpecificationsTest {
     }
 
     @Test
-    void periodWithinShouldApplyBothBoundsWhenBothProvided() {
+    void hasPeriodWithinShouldApplyBothBoundsWhenBothProvided() {
         LocalDate from = LocalDate.of(2026, 1, 1);
         LocalDate to = LocalDate.of(2026, 12, 31);
 
-        var spec = PolicySpecifications.periodWithin(from, to);
+        var spec = PolicySpecifications.hasPeriodWithin(from, to);
 
         Root<Policy> root = mock(Root.class);
         CriteriaQuery<?> query = mock(CriteriaQuery.class);
